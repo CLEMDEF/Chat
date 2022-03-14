@@ -1,0 +1,73 @@
+body {
+  background-color: dimgray;
+  color: gainsboro;
+  font-family: Garamond;
+
+}
+input {
+  background-color: darkgrey;
+  color: whitesmoke;
+}
+input:hover {
+  border-radius: 8px
+  border: 4px solid slategray
+}
+button {
+  height: 50px;
+  width: 100px;
+  background-color: grey;
+  color: whitesmoke;
+  padding: 1px 4px;
+  margin: 0px 0px;
+  cursor: pointer;
+  border-radius: 16px;
+  border: 8px solid darkgrey;
+}
+div {
+  background-color: dimgray;
+  color: lightgray;
+  padding: 1px 4px;
+  margin: 8px 0px;
+  border-radius: 8px;
+  border: 4px solid darkgrey;
+}
+table, th, td {
+  border: 1px solid;
+}
+table {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 12px;
+}
+th {
+  background-color: dimgray;
+  color: gainsboro;
+}
+tr:nth-child(even) {
+  background-color: whitesmoke;
+}
+tr:nth-child(odd) {
+  background-color: silver;
+}
+tr {
+  color: black;
+}
+tr:hover {
+  color: darkslategray;
+  background-color: gainsboro;
+}
+td:hover {
+  color: darkgray;
+  background: ghostwhite;
+}
+a {
+  height: 50px;
+  width: 100px;
+  background-color: grey;
+  color: whitesmoke;
+  padding: 1px 4px;
+  margin: 4px 0px;
+  cursor: pointer;
+  border-radius: 16px;
+  border: 8px solid darkgrey;
+}
