@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg"></link>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <title>Chat Client</title> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <a href="index.html">Acceuil</a>
+    <br/><label for="tamere">Nom d'utilisateur</label>
+    <input name="tamere" id="tamere" type="text"/>
+    <button id="yeet" class="btn" onclick="getUsername()">
+      Enregistrer
+      <i class="fa fa-confirm"></i>
+    </button>
+    <table id="index">
+      <tr id="index">
+        <td>
+          <div id="chatLog" wrap="hard"></div>
+          <div id="inputs">
+            <textarea name="msg" id="msg" autofocus="true" placeholder="Message" wrap="hard" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
+            <button name="sendButton" id="submit" class="btn">
+              <i class="fa fa-paper-plane"></i>
+              Envoyer
+            </button>
+          </div>
+        </td>
+        <td>
+          <div id="stat" wrap="hard"></div>
+        </td>
+      </tr>
+    </table>
+    <script src="/script.js"></script>
+  </body>
+</html>

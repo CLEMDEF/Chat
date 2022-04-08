@@ -1,8 +1,15 @@
 body {
-  background-color: dimgray;
-  color: gainsboro;
-  font-family: Garamond;
-
+  background-color: #303136;
+  color: #f6ffff;
+  font-family: sans-serif;
+}
+body.child, body {
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 }
 input {
   background-color: darkgrey;
@@ -22,43 +29,83 @@ button {
   cursor: pointer;
   border-radius: 16px;
   border: 8px solid darkgrey;
+  vertical-align: baseline;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 }
-div {
-  background-color: dimgray;
-  color: lightgray;
-  padding: 1px 4px;
+div#chatLog {
+  background-color: #363940;
+  color: whitesmoke;
+  width: auto;
   margin: 8px 0px;
-  border-radius: 8px;
-  border: 4px solid darkgrey;
+  overflow-y:auto;
+  height: 400px;
+  white-space: pre-wrap;
+  -webkit-touch-callout: text;
+    -webkit-user-select: text;
+     -khtml-user-select: text;
+       -moz-user-select: text;
+        -ms-user-select: text;
+            user-select: text;
+  word-wrap: break-word;
 }
-table, th, td {
+div#stat {
+  background-color: #363940;
+  color: whitesmoke;
+  width: auto;
+  margin: 8px 0px;
+  height: 500px;
+  -webkit-touch-callout: text;
+    -webkit-user-select: text;
+     -khtml-user-select: text;
+       -moz-user-select: text;
+        -ms-user-select: text;
+            user-select: text;
+  word-wrap: break-word;
+}
+table#plan, th, td {
   border: 1px solid;
 }
 table {
-  width: 100%;
-  height: 100%;
-  margin-bottom: 12px;
+  width:100vw;
+  table-layout: fixed;
+  -webkit-touch-callout: text;
+    -webkit-user-select: text;
+     -khtml-user-select: text;
+       -moz-user-select: text;
+        -ms-user-select: text;
+            user-select: text
 }
-th {
+table#plan {
+    margin-bottom: 12px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+table#plan th {
   background-color: dimgray;
   color: gainsboro;
 }
-tr:nth-child(even) {
+table#plan tr:nth-child(even) {
   background-color: whitesmoke;
 }
-tr:nth-child(odd) {
+table#plan tr:nth-child(odd) {
   background-color: silver;
+}
+table#index {
+  border: 0px;
 }
 tr {
   color: black;
 }
-tr:hover {
-  color: darkslategray;
-  background-color: gainsboro;
-}
-td:hover {
-  color: darkgray;
-  background: ghostwhite;
+td {
 }
 a {
   height: 50px;
@@ -70,4 +117,20 @@ a {
   cursor: pointer;
   border-radius: 16px;
   border: 8px solid darkgrey;
+}
+textarea {
+  background-color: #40454b;
+  color:lightgray;
+  resize: none;
+  width: 80%;
+  height: auto;
+  vertical-align: baseline;
+}
+div#inputs {
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 }

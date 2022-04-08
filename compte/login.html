@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg"></link>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <title>Login</title>
+  </head>
+  <body>
+    <h1>Création du compte</h1>
+    <a href="/index.html">Revenir à la page d'acceuil</a><br><br>
+    <label>identifiant</label> : <input type="text"></input><br>
+    <label>mot de passe</label> : <input type="password"></input><br>
+    <input type="submit" value="Soumettre" onclick="goToChat()"></input>
+  </body>
+  <script>
+    function goToChat(){
+      window.location.replace('/chat.html');
+    }
+  </script>
+</html>
