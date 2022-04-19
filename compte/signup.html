@@ -9,16 +9,13 @@
     <title>Créer un compte</title> 
   </head>
   <body>
-    <h1>Se Connecter</h1>
+    <h1>Création du compte</h1>
     <a href="/index.html">Revenir à la page d'acceuil</a><br><br>
-    <label>identifiant</label> : <input type="text"></input><br>
-    <label>nom d'utilisateur</label> : <input type="text"></input><br>
-    <label>mot de passe</label> : <input type="password"></input><br>
-    <input type="submit" value="Soumettre" onclick="goToChat()"></input>
+    <form action="/username.php" method="post">
+      <label>identifiant</label> : <input type="text" id="id"></input><br>
+      <label>nom d'utilisateur</label> : <input type="text" id="pseudo"></input><br>
+      <label>mot de passe</label> : <input type="password" id="pwd"></input><br>
+      <input type="submit" value="Soumettre"></input>
+    </form>
   </body>
-  <script>
-    function goToChat(){
-      window.location.replace('/chat.html');
-    }
-  </script>
 </html>

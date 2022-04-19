@@ -8,6 +8,13 @@
   foreach($revlog as $line) {
     $output .= trim($line)."&#10;";
   }
+  $linecount = 0;
+  $handle = fopen('chat.txt', "r");
+  while(!feof($handle)){
+    $line = fgets($handle);
+    $linecount++;
+  }
+  fclose($handle);
   echo $output."\n\n";
   ob_flush();
   flush();

@@ -10,13 +10,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
-    <a href="index.html">Acceuil</a>
-    <br/><label for="tamere">Nom d'utilisateur</label>
-    <input name="tamere" id="tamere" type="text"/>
-    <button id="yeet" class="btn" onclick="getUsername()">
-      Enregistrer
-      <i class="fa fa-confirm"></i>
-    </button>
+    <th><a href="index.html">Acceuil</a></th>
+    <th><button onclick="montrer()" id="button_stats">afficher stats</button></th><br><br>
     <table id="index">
       <tr id="index">
         <td>
@@ -29,7 +24,7 @@
             </button>
           </div>
         </td>
-        <td>
+        <td id="truc_a_cacher">
           <div id="stat" wrap="hard"></div>
         </td>
       </tr>

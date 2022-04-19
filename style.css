@@ -40,7 +40,8 @@ button {
 div#chatLog {
   background-color: #363940;
   color: whitesmoke;
-  width: auto;
+  width: 300px;
+  line-height: 20px
   margin: 8px 0px;
   overflow-y:auto;
   height: 400px;

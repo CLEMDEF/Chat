@@ -55,7 +55,7 @@
   
   $nb = 0;
   foreach($dico as $mot => $value){
-    if ($mot !== ""){
+    if ($mot !== "" && $mot !== " "){
       if ($nb<8){
         $msg .=" - ".strtolower($mot)." : $value <br>"; 
         $nb++;
