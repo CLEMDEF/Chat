@@ -1,7 +1,7 @@
 <?php
   header('Content-Type: text/event-stream');
   header('Cache-Control: no-cache');
-  $caracteres = "/[\'^£$%&*()}?!{@.#~?><>,|=_+¬-]/1234567890";
+  $caracteres = "/[\^£$%&*()}?!{@.#~?<>,|=_+¬-]/1234567890";
   $myfile = fopen("chat.txt", "r") or die("Unable to open file!");
   $truc = fread($myfile,filesize("chat.txt"));
   $truc = explode(' ', $truc);
@@ -31,8 +31,13 @@
     }
     if ($supr == False){
       foreach($lettres as $lettre){
-        if (!strpos($caracteres, $lettre)){
-          $mot .= $lettre;
+        if (!empty($lettre)) {
+          if (!strpos($caracteres, $lettre)){
+            $mot .= $lettre;
+          }
+          else{
+            $mot .= " ";
+          }
         }
       }
       if (array_key_exists($mot,$dico)){
@@ -41,9 +46,28 @@
       elseif ($mot !== "hvoici"){
         $dico[$mot] = 1;
       }
-    } 
-  $msg = "data:";
+    }
   }
+  foreach(array_keys($dico) as $word)
+  {
+    $url = "https://od-api.oxforddictionaries.com/api/v2/words/fr?q=".$word."&fields=definitions";
+    $curl = curl_init();
+    $fields = array(
+    "Accept"  => "application/json",
+    "app_id"  => "525b91c5",
+    "app_key" => getenv("app_key")
+    );
+    curl_setopt($curl, CURLOPT_URL, $url);
+    curl_setopt($curl, CURLOPT_HTTPGET, TRUE);
+    curl_setopt($curl, CURLOPT_HTTPHEADER, $fields);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    $data = curl_exec($curl);
+    if (($data != false ) and ( curl_getinfo($curl,CURLINFO_HTTP_CODE) == 404))
+    {
+      unset($dico[$word]);
+    }
+  }
+  $msg = "";
   fclose($myfile);
   arsort($dico);
   if ((count($dico)-1) >= 8){

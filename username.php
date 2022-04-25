@@ -1,29 +1,35 @@
 <?php
-  $file = file_get_contents('usernames.json');
-  $data = json_decode($file, true);
-  $answer = $_POST['id'];
-  $pwd = $_POST['pwd'];
-  $pseudo = $_POST['pseudo'];
-  $answer = password_hash($answer, PASSWORD_DEFAULT, array('cost'=>13));
-  $pwd = password_hash($pwd, PASSWORD_DEFAULT, array('cost'=>13));
-  $response = array($answer=>$pwd);
-  $data[$answer] = $pwd;
-
-  /*$linecount = 0;
-  while(!feof($file)){
-    $line = fgets($file);
-    $linecount++;
+  $log = file("usernames.txt");
+  $revlog = array_reverse($log, true);
+  $revlog = array_reverse($revlog, true);
+  if (isset($_POST['pseudo'])){
+    $line = 0;
+    foreach($revlog as $line1) {
+      $line += 1;
+    }
+    $id = $_POST['id'];
+    $pwd = $_POST['pwd'];
+    $pseudo = $_POST['pseudo'];
+    $id = password_hash($id, PASSWORD_DEFAULT, array('cost'=>13));
+    $pwd = password_hash($pwd, PASSWORD_DEFAULT, array('cost'=>13));
+    $msg = strval($line)." ".$id.",".$pwd." : ".$pseudo;
+    $file = fopen("usernames.txt","a+");
+    fwrite($file,$msg."\n");
+    fclose($file);
   }
-  $answer_f = strval($linecount - 1);
-  $answer_f .= $answer;*/
-  $newJsonString = json_encode($data);
-  file_put_contents('usernames.json', $newJsonString);
-
-
+  else {
+    
+  }
+  
+  
 ?>
 <html>
   <script>
     window.onload=function(event){
+      var id = "<?php echo $_POST['id'] ?>";
+      var pseudo = "<?php echo $_POST['pseudo'] ?>"
+      document.cookie = "id=" + id;
+      document.cookie = "pseudo=" + pseudo;
       window.location.replace('/chat.html');
     }
   </script>
