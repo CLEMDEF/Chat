@@ -6,3 +6,4 @@ C'est très sécurisé
 - post pour les recevoirs
 - protection contre l'insertion de code
 
+Fait en collaboration avec [@AntoineTrem](https://github.com/AntoineTrem).
